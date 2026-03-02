@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ksenia — desenvolvedora full-stack no Brasil. Criação de sites profissionais, bots para WhatsApp e Telegram e automação de negócios.">
+<meta name="keywords" content="desenvolvedora full stack, criação de sites, sites profissionais, bot WhatsApp, bot Telegram, automação de negócios, desenvolvedora Brasil, freelancer web">
+<meta name="author" content="Ksenia">
+
+<!-- Canonical (troque para o seu domínio final) -->
+<link rel="canonical" href="https://SEU-DOMINIO.com/">
+
+<!-- Open Graph (troque URLs/preview) -->
+<meta property="og:locale" content="pt_BR">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ksenia — Desenvolvedora Full-Stack">
+<meta property="og:description" content="Sites, bots e automação para negócios.">
+<meta property="og:url" content="https://SEU-DOMINIO.com/">
+<meta property="og:image" content="https://SEU-DOMINIO.com/preview.jpg">
+
+<!-- Twitter (troque preview) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ksenia — Desenvolvedora Full-Stack">
+<meta name="twitter:description" content="Sites, bots e automação para negócios.">
+<meta name="twitter:image" content="https://SEU-DOMINIO.com/preview.jpg">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ksenia",
+  "jobTitle": "Desenvolvedora Full Stack",
+  "url": "https://SEU-DOMINIO.com/",
+  "sameAs": [
+    "https://t.me/ksn_yr",
+    "https://wa.me/5521997982467"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  }
+}
+</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Ksenia — Desenvolvedora Full-Stack (Sites, Bots e Automação)</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --lime: #c8ff00;
+    --pink: #ff3ebe;
+    --cyan: #00e5ff;
+    --purple: #7b2fff;
+    --text: #f0f0f0;
+    --muted: #888;
+    --border: rgba(255,255,255,0.07);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Syne', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* --- HERO --- */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 8vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.18;
+    pointer-events: none;
+  }
+  .shape1 { width: 500px; height: 500px; background: var(--purple); top: -100px; right: -100px; animation: float1 8s ease-in-out infinite; }
+  .shape2 { width: 300px; height: 300px; background: var(--pink); bottom: -80px; left: 10%; animation: float2 10s ease-in-out infinite; }
+  .shape3 { width: 200px; height: 200px; background: var(--lime); top: 30%; left: 40%; animation: float1 6s ease-in-out infinite 2s; }
+
+  @keyframes float1 { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-30px) rotate(10deg)} }
+  @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(20px)} }
+
+  .hero-left { position: relative; z-index: 2; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,255,0,0.1);
+    border: 1px solid rgba(200,255,0,0.3);
+    color: var(--lime);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .badge::before { content: '●'; font-size: 8px; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  h1 {
+    font-size: clamp(52px, 7vw, 100px);
+    font-weight: 800;
+    line-height: 0.95;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease 0.15s both;
+  }
+
+  h1 .name-highlight {
+    display: block;
+    background: linear-gradient(135deg, var(--lime), var(--cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-desc {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 420px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-family: 'DM Mono', monospace;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.45s both;
+  }
+
+  .btn-primary {
+    background: var(--lime);
+    color: #000;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(200,255,0,0.4); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1.5px solid var(--border);
+    letter-spacing: 0.5px;
+    transition: border-color 0.2s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-secondary:hover { border-color: var(--cyan); transform: translateY(-3px); color: var(--cyan); }
+
+  /* Hero right - avatar */
+  .hero-right {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .avatar-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+  }
+
+  .avatar-ring {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    border: 2px dashed rgba(200,255,0,0.3);
+    animation: spin 20s linear infinite;
+  }
+  .avatar-ring::before {
+    content: '';
+    position: absolute;
+    width: 12px; height: 12px;
+    background: var(--lime);
+    border-radius: 50%;
+    top: 20px; left: 50%;
+    transform: translateX(-50%);
+  }
+  @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+  .avatar-circle {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-circle::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4));
+  }
+
+  .avatar-initials {
+    font-size: 90px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: -5px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .avatar-tag {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--lime);
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  .tech-badges {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tech-badges.left { left: -80px; top: 50%; transform: translateY(-50%); }
+  .tech-badges.right { right: -80px; top: 50%; transform: translateY(-50%); }
+
+  .tech-pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    white-space: nowrap;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .tech-pill:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+
+  /* --- NAV --- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,10,15,0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+  }
+  .logo span { color: var(--lime); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--lime); }
+
+  /* --- SERVICES --- */
+  .section {
+    padding: 100px 8vw;
+    position: relative;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--pink);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 60px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 30px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: default;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--card-accent, var(--lime));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .service-card:hover { transform: translateY(-8px); border-color: rgba(255,255,255,0.15); }
+  .service-card:hover::before { opacity: 1; }
+
+  .service-card:nth-child(1) { --card-accent: var(--lime); }
+  .service-card:nth-child(2) { --card-accent: var(--pink); }
+  .service-card:nth-child(3) { --card-accent: var(--cyan); }
+
+  .service-icon {
+    font-size: 36px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .stag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.05);
+    color: var(--muted);
+  }
+
+  /* --- PORTFOLIO --- */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .project-card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: transform 0.3s;
+    cursor: default;
+  }
+  .project-card:hover { transform: translateY(-6px); }
+
+  .project-thumb {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card:nth-child(1) .project-thumb { background: linear-gradient(135deg, #0f2027, #1a3a2a); }
+  .project-card:nth-child(2) .project-thumb { background: linear-gradient(135deg, #1a0f27, #2d1f3a); }
+
+  .project-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--surface), transparent);
+  }
+
+  .project-info {
+    padding: 24px;
+  }
+  .project-info h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+  .project-info p { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .ptag {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(200,255,0,0.08);
+    color: var(--lime);
+    border: 1px solid rgba(200,255,0,0.15);
+  }
+
+  /* --- CONTACT --- */
+  .contact-section {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .contact-left p {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--text);
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: border-color 0.2s, transform 0.2s, background 0.2s;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+  }
+  .contact-link:hover { border-color: var(--lime); transform: translateX(6px); background: rgba(200,255,0,0.05); }
+  .contact-icon { font-size: 22px; }
+  .contact-label { color: var(--muted); font-size: 11px; display: block; margin-bottom: 2px; }
+  .contact-value { color: var(--text); }
+
+  /* form */
+  .form-group { margin-bottom: 20px; }
+  .form-group label {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--lime); }
+  .form-group textarea { height: 120px; }
+
+  /* footer */
+  footer {
+    padding: 30px 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* scroll animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 8vw;
+  }
+
+  /* marquee strip */
+  .marquee-strip {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    background: rgba(200,255,0,0.03);
+  }
+  .marquee-inner {
+    display: flex;
+    gap: 48px;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+  .marquee-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .marquee-item span { color: var(--lime); }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 120px; }
+    .hero-right { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .tech-badges { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">K<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-shape shape1"></div>
+  <div class="hero-bg-shape shape2"></div>
+  <div class="hero-bg-shape shape3"></div>
+
+  <div class="hero-left">
+    <div class="badge">Disponível para projetos</div>
+    <h1>Olá, sou<br><span class="name-highlight">Ksenia</span></h1>
+    <p class="hero-desc">
+      Desenvolvedora full-stack no Brasil especializada em criação de sites profissionais, bots para WhatsApp e Telegram e automação de negócios. Transformo ideias em soluções digitais que funcionam de verdade.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contato" class="btn-primary">Falar comigo →</a>
+      <a href="#portfolio" class="btn-secondary">Ver projetos</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="avatar-wrapper">
+      <div class="avatar-ring"></div>
+      <div class="avatar-circle">
+        <span class="avatar-initials">K</span>
+      </div>
+      <div class="avatar-tag">@ksn_yr</div>
+      <div class="tech-badges left">
+        <div class="tech-pill">⚡ Python</div>
+        <div class="tech-pill">🤖 Bots</div>
+        <div class="tech-pill">🌐 HTML/CSS</div>
+      </div>
+      <div class="tech-badges right">
+        <div class="tech-pill">🛒 E-commerce</div>
+        <div class="tech-pill">🔧 APIs</div>
+        <div class="tech-pill">📊 Automação</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <div class="marquee-item"><span>✦</span> Sites Profissionais</div>
+    <div class="marquee-item"><span>✦</span> Bots Inteligentes</div>
+    <div class="marquee-item"><span>✦</span> Automação de Processos</div>
+    <div class="marquee-item"><span>✦</span> Sistemas de Vendas</div>
+    <div class="marquee-item"><span>✦</span> Integrações de API</div>
+    <div class="marquee-item"><span>✦</span> Soluções Personalizadas</div>
+    <!-- duplicate -->
+    <div class="marquee-item"><span>✦</span> Sites Profissionais</div>
+    <div class="marquee-item"><span>✦</span> Bots Inteligentes</div>
+    <div class="marquee-item"><span>✦</span> Automação de Processos</div>
+    <div class="marquee-item"><span>✦</span> Sistemas de Vendas</div>
+    <div class="marquee-item"><span>✦</span> Integrações de API</div>
+    <div class="marquee-item"><span>✦</span> Soluções Personalizadas</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="servicos">
+  <div class="section-label">O que eu faço</div>
+  <h2 class="section-title reveal">Serviços</h2>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🌐</span>
+      <h3>Desenvolvimento de Sites</h3>
+      <p>Sites modernos, rápidos e responsivos. Do landing page institucional ao e-commerce completo, com design que converte.</p>
+      <div class="service-tags">
+        <span class="stag">HTML/CSS</span>
+        <span class="stag">JavaScript</span>
+        <span class="stag">WordPress</span>
+        <span class="stag">E-commerce</span>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🤖</span>
+      <h3>Bots & Chatbots</h3>
+      <p>Bots para Telegram, WhatsApp e outras plataformas. Automação de atendimento, vendas e processos repetitivos.</p>
+      <div class="service-tags">
+        <span class="stag">Telegram</span>
+        <span class="stag">WhatsApp API</span>
+        <span class="stag">Python</span>
+        <span class="stag">Webhooks</span>
+      </div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">⚙️</span>
+      <h3>Automação de Negócios</h3>
+      <p>Automatize sua loja ou empresa. Controle de vendas, estoque, relatórios e integração de sistemas em um só lugar.</p>
+      <div class="service-tags">
+        <span class="stag">PDV</span>
+        <span class="stag">Relatórios</span>
+        <span class="stag">Integrações</span>
+        <span class="stag">APIs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+  <div class="section-label">Projetos reais</div>
+  <h2 class="section-title reveal">Portfólio</h2>
+
+  <div class="portfolio-grid">
+    <div class="project-card reveal">
+      <div class="project-thumb">🛒</div>
+      <div class="project-info">
+        <h3>Automação de Ponto de Venda</h3>
+        <p>Sistema completo de automação para comércio: controle de estoque, vendas, caixa e relatórios em tempo real. Solução integrada para loja física.</p>
+        <div class="project-tags">
+          <span class="ptag">Automação</span>
+          <span class="ptag">PDV</span>
+          <span class="ptag">Gestão de Estoque</span>
+          <span class="ptag">Dashboard</span>
+        </div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-thumb">💬</div>
+      <div class="project-info">
+        <h3>Bot de Atendimento</h3>
+        <p>Chatbot inteligente para automação de atendimento e vendas via WhatsApp/Telegram, com fluxos personalizados e integração de pagamentos.</p>
+        <div class="project-tags">
+          <span class="ptag">Bot</span>
+          <span class="ptag">WhatsApp</span>
+          <span class="ptag">Vendas</span>
+          <span class="ptag">Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section class="section contact-section" id="contato">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="section-label">Vamos trabalhar juntos</div>
+      <h2 class="section-title" style="margin-bottom: 20px;">Fale<br>comigo</h2>
+      <p>Tem um projeto em mente? Me manda uma mensagem e a gente começa a transformar sua ideia em realidade.</p>
+      <div class="contact-links">
+        <a href="https://wa.me/5521997982467" class="contact-link" target="_blank">
+          <span class="contact-icon">💬</span>
+          <div>
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-value">+55 21 99798-2467</span>
+          </div>
+        </a>
+        <a href="https://t.me/ksn_yr" class="contact-link" target="_blank">
+          <span class="contact-icon">✈️</span>
+          <div>
+            <span class="contact-label">Telegram</span>
+            <span class="contact-value">@ksn_yr</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="form-group">
+        <label>SEU NOME</label>
+        <input type="text" placeholder="Como posso te chamar?">
+      </div>
+      <div class="form-group">
+        <label>CONTATO</label>
+        <input type="text" placeholder="WhatsApp, Telegram ou e-mail">
+      </div>
+      <div class="form-group">
+        <label>PROJETO</label>
+        <textarea placeholder="Me conta sobre seu projeto..."></textarea>
+      </div>
+      <a href="https://wa.me/5521997982467" class="btn-primary" style="width: 100%; justify-content: center;">
+        Enviar pelo WhatsApp →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Ksenia — Todos os direitos reservados • Desenvolvedora de sites e automação no Brasil</span>
+  <span style="color: var(--lime);">Feito com ♥</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
