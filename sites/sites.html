@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Criação de sites profissionais no Brasil. Landing pages, sites institucionais, portfólios e páginas otimizadas para SEO, velocidade e conversão.">
+  <meta name="keywords" content="criação de sites profissionais, site profissional Brasil, landing page, desenvolvedora full stack, site responsivo, freelancer web, SEO">
+  <meta name="author" content="Ksenia">
+  <link rel="canonical" href="https://ksenia-card.vercel.app/sites">
+
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Criação de Sites Profissionais no Brasil | Ksenia">
+  <meta property="og:description" content="Sites modernos, rápidos e otimizados para SEO. Landing pages, sites institucionais, portfólios e páginas focadas em conversão.">
+  <meta property="og:url" content="https://ksenia-card.vercel.app/sites">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Criação de Sites Profissionais no Brasil | Ksenia">
+  <meta name="twitter:description" content="Sites modernos, rápidos e otimizados para SEO para empresas, especialistas e negócios locais.">
+
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=s0JZ4LY7EkzAaw8JT1a80wACVstxKesedasNzD83BtRGpRkgDmddPcnw5lUkaCyMXXVx4k2azAIjJ8rfTw2MQsfWWZF1JTXEer79sHPWmwOVCFAo3U_nwnY3TKneaLhR_mMSjQXrq1x1K0HqowQYWrEy4PMD4WDNxastIuK_aaqc-hcFlZbay1Sd3G6Cu9SwOZjctSOTSQbbQnKEh_pBQGo9_mP-ZETqJxiTb7pamL_5ITUbkU5viBzMn7biITxz-CXmTuq6_DGaZ0yGapU_Rg" charset="UTF-8"></script><script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Criação de Sites Profissionais",
+    "provider": {
+      "@type": "Person",
+      "name": "Ksenia",
+      "jobTitle": "Desenvolvedora Full Stack"
+    },
+    "serviceType": "Desenvolvimento de sites",
+    "areaServed": "BR",
+    "url": "https://ksenia-card.vercel.app/sites",
+    "description": "Criação de landing pages, sites institucionais, portfólios e páginas otimizadas para SEO, velocidade e conversão."
+  }
+  </script>
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <title>Criação de Sites Profissionais no Brasil | Ksenia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface-2: #151520;
+      --lime: #c8ff00;
+      --pink: #ff3ebe;
+      --cyan: #00e5ff;
+      --purple: #7b2fff;
+      --text: #f0f0f0;
+      --muted: #9090a0;
+      --border: rgba(255,255,255,0.08);
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 8vw;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .logo span { color: var(--lime); }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-family: 'DM Mono', monospace;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); }
+
+    .page {
+      width: min(var(--max), 100% - 16vw);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      padding: 160px 0 90px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 42px;
+      align-items: center;
+      min-height: 92vh;
+      position: relative;
+    }
+
+    .hero-bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .shape1 { width: 440px; height: 440px; background: var(--purple); top: 80px; right: -80px; }
+    .shape2 { width: 260px; height: 260px; background: var(--pink); bottom: 30px; left: -80px; }
+    .shape3 { width: 180px; height: 180px; background: var(--lime); top: 180px; left: 42%; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,255,0,0.1);
+      border: 1px solid rgba(200,255,0,0.28);
+      color: var(--lime);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 26px;
+    }
+
+    .badge::before {
+      content: '●';
+      font-size: 8px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 82px);
+      font-weight: 800;
+      line-height: 0.98;
+      margin-bottom: 22px;
+    }
+
+    .headline-accent {
+      display: block;
+      background: linear-gradient(135deg, var(--lime), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .lead {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 720px;
+      line-height: 1.75;
+      margin-bottom: 34px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--lime);
+      color: #000;
+    }
+
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(200,255,0,0.32); }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1.5px solid var(--border);
+      background: transparent;
+    }
+
+    .btn-secondary:hover { transform: translateY(-3px); border-color: var(--cyan); color: var(--cyan); }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 760px;
+    }
+
+    .point {
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .point strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: var(--lime);
+    }
+
+    .point span {
+      color: var(--muted);
+      font-size: 12px;
+      font-family: 'DM Mono', monospace;
+      line-height: 1.5;
+      display: block;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(17,17,24,0.95), rgba(17,17,24,0.74));
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.35);
+    }
+
+    .code-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--lime);
+      border: 1px solid rgba(200,255,0,0.16);
+      background: rgba(200,255,0,0.06);
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin-bottom: 18px;
+    }
+
+    .checklist {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin: 20px 0 26px;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    .checklist li::before {
+      content: '✦';
+      color: var(--lime);
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+    }
+
+    .mini-card .label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .mini-card strong { font-size: 20px; }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--lime);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 4vw, 60px);
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      line-height: 1.8;
+      margin-bottom: 42px;
+      font-size: 14px;
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(200,255,0,0.28);
+    }
+
+    .card .icon {
+      font-size: 34px;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .card ul {
+      margin-top: 14px;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .timeline-step {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      font-weight: 800;
+      color: #000;
+      background: linear-gradient(135deg, var(--lime), var(--cyan));
+    }
+
+    .timeline-item h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .timeline-tags span {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(200,255,0,0.18);
+      background: rgba(200,255,0,0.06);
+      color: var(--lime);
+    }
+
+    .faq {
+      display: grid;
+      gap: 16px;
+    }
+
+    details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 18px;
+      font-weight: 700;
+      padding-right: 28px;
+      position: relative;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: var(--lime);
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    details[open] summary::after { content: '−'; }
+
+    details p {
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-top: 14px;
+    }
+
+    .cta-box {
+      padding: 40px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at top right, rgba(123,47,255,0.22), transparent 36%),
+        radial-gradient(circle at bottom left, rgba(200,255,0,0.12), transparent 38%),
+        var(--surface);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .cta-box p {
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 14px;
+      margin: 12px 0 22px;
+    }
+
+    .price-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+    }
+
+    .price-card .small {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--muted);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .price-card strong {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .price-card p {
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    footer {
+      padding: 30px 0 40px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .anchor-offset { scroll-margin-top: 110px; }
+
+    @media (max-width: 980px) {
+      nav { padding: 18px 6vw; }
+      .page { width: min(var(--max), 100% - 12vw); }
+      .hero,
+      .cta-box,
+      .grid-3,
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero-points { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .page { width: min(var(--max), 100% - 10vw); }
+      .hero { padding-top: 138px; }
+      .timeline-item { grid-template-columns: 1fr; }
+      .timeline-step { width: 60px; height: 60px; border-radius: 14px; }
+      .cta-box { padding: 28px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">K<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/sites" class="active">Sites</a></li>
+      <li><a href="/bots">Bots</a></li>
+      <li><a href="/automation">Automação</a></li>
+      <li><a href="/#portfolio">Portfólio</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-bg-shape shape1"></div>
+      <div class="hero-bg-shape shape2"></div>
+      <div class="hero-bg-shape shape3"></div>
+
+      <div>
+        <div class="badge">Criação de sites profissionais</div>
+        <h1>
+          Sites que parecem sérios,<br>
+          <span class="headline-accent">carregam rápido e convertem</span>
+        </h1>
+        <p class="lead">
+          Desenvolvo sites profissionais no Brasil para negócios, especialistas e marcas que precisam de presença online real, não só uma página bonita perdida no limbo digital. Crio landing pages, sites institucionais, páginas de serviços e estruturas pensadas para SEO, velocidade e conversão.
+        </p>
+        <div class="cta-row">
+          <a class="btn-primary" href="https://wa.me/5521997982467" target="_blank" rel="noopener noreferrer">Solicitar orçamento →</a>
+          <a class="btn-secondary" href="#processo">Como funciona</a>
+        </div>
+
+        <div class="hero-points">
+          <div class="point">
+            <strong>SEO</strong>
+            <span>Estrutura limpa, headings corretos, textos úteis e base técnica pronta para indexação.</span>
+          </div>
+          <div class="point">
+            <strong>Rápido</strong>
+            <span>Layout leve, foco em performance e experiência boa em mobile, porque 2026 já chegou.</span>
+          </div>
+          <div class="point">
+            <strong>Conversão</strong>
+            <span>Botões, seções e argumentos pensados para gerar contato, não só elogio vazio.</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="code-chip">✦ escopo do serviço</div>
+        <h2 style="font-size: 34px; line-height: 1.05; margin-bottom: 12px;">O que está incluído</h2>
+        <p style="font-family:'DM Mono', monospace; color: var(--muted); line-height: 1.8; font-size: 13px;">
+          Cada projeto é adaptado ao objetivo do negócio, mas a base precisa ser sólida. Sem isso, vira só decoração cara com domínio próprio.
+        </p>
+        <ul class="checklist">
+          <li>Design responsivo e visual moderno</li>
+          <li>Estrutura pensada para SEO on-page</li>
+          <li>Copy clara para explicar serviço e gerar ação</li>
+          <li>Integração com WhatsApp, formulários e CTA</li>
+          <li>Organização técnica para futuras expansões</li>
+          <li>Entrega pronta para publicação na web</li>
+        </ul>
+        <div class="mini-grid">
+          <div class="mini-card">
+            <span class="label">Tipos</span>
+            <strong>Landing, institucional, catálogo</strong>
+          </div>
+          <div class="mini-card">
+            <span class="label">Foco</span>
+            <strong>Presença, tráfego e contatos</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section anchor-offset" id="tipos">
+      <div class="section-label">Tipos de projeto</div>
+      <h2 class="section-title">Qual site faz sentido para o seu negócio?</h2>
+      <p class="section-intro">
+        Nem todo projeto precisa virar uma nave espacial. Às vezes o que resolve mesmo é uma página objetiva que explica serviço, mostra prova e faz o cliente clicar no WhatsApp. Outras vezes precisa de uma estrutura maior, com várias páginas e mais espaço para SEO.
+      </p>
+
+      <div class="grid-3">
+        <article class="card">
+          <span class="icon">⚡</span>
+          <h3>Landing page</h3>
+          <p>Página focada em um serviço, oferta ou campanha. Boa para tráfego pago, apresentação rápida do negócio e captação de leads.</p>
+          <ul>
+            <li>Estrutura objetiva e persuasiva</li>
+            <li>Seções claras e CTA forte</li>
+            <li>Ideal para lançamento ou validação</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="icon">🌐</span>
+          <h3>Site institucional</h3>
+          <p>Para empresas, prestadores de serviço e profissionais que precisam de presença confiável e páginas separadas para cada solução.</p>
+          <ul>
+            <li>Mais autoridade e organização</li>
+            <li>Melhor base para SEO</li>
+            <li>Espaço para serviços, FAQ e portfólio</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <span class="icon">🛒</span>
+          <h3>Catálogo ou páginas comerciais</h3>
+          <p>Quando o negócio precisa mostrar vários produtos ou categorias, com busca, navegação e estrutura preparada para crescer.</p>
+          <ul>
+            <li>Melhor apresentação dos itens</li>
+            <li>Mais clareza para o cliente</li>
+            <li>Possibilidade de expansão depois</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section anchor-offset" id="beneficios">
+      <div class="section-label">Benefícios</div>
+      <h2 class="section-title">O que um site profissional resolve na prática</h2>
+      <p class="section-intro">
+        Um site bom não existe para massagear ego de dono de negócio. Ele precisa explicar, posicionar e transformar visita em contato. Sem isso, vira só mais uma aba aberta que ninguém termina de ler.
+      </p>
+
+      <div class="grid-2">
+        <article class="card">
+          <span class="icon">📈</span>
+          <h3>Mais chance de ser encontrado</h3>
+          <p>Com estrutura correta, títulos claros, páginas úteis e conteúdo bem organizado, o site ganha muito mais chance de aparecer no Google para buscas relacionadas ao seu serviço.</p>
+        </article>
+
+        <article class="card">
+          <span class="icon">🤝</span>
+          <h3>Mais credibilidade</h3>
+          <p>Cliente desconfia de negócio sem presença digital séria. Um site bem feito transmite organização, profissionalismo e segurança antes mesmo da primeira conversa.</p>
+        </article>
+
+        <article class="card">
+          <span class="icon">📱</span>
+          <h3>Melhor experiência no celular</h3>
+          <p>A maioria acessa pelo mobile. Por isso o layout precisa ser rápido, legível e fácil de usar no toque, sem sofrimento gratuito.</p>
+        </article>
+
+        <article class="card">
+          <span class="icon">🎯</span>
+          <h3>Mais conversão</h3>
+          <p>Botões estratégicos, estrutura lógica e argumentos certos ajudam o usuário a entender o valor do serviço e entrar em contato mais rápido.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section anchor-offset" id="processo">
+      <div class="section-label">Processo</div>
+      <h2 class="section-title">Como funciona o desenvolvimento</h2>
+      <p class="section-intro">
+        O processo é simples, porque complicar projeto pequeno com teatro corporativo geralmente só serve para atrasar entrega e fingir profundidade. O foco aqui é clareza, execução e resultado.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-step">1</div>
+          <div>
+            <h3>Entendimento do negócio</h3>
+            <p>Primeiro eu entendo seu serviço, público, objetivo do site e o que precisa acontecer depois da visita. A página tem que servir ao negócio, não ao contrário.</p>
+            <div class="timeline-tags">
+              <span>briefing</span><span>objetivo</span><span>público</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-step">2</div>
+          <div>
+            <h3>Estrutura e copy</h3>
+            <p>Organizo a página ou o conjunto de páginas, defino seções, argumentos, CTA e o que precisa ser destacado para gerar entendimento e confiança.</p>
+            <div class="timeline-tags">
+              <span>arquitetura</span><span>texto</span><span>SEO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-step">3</div>
+          <div>
+            <h3>Design e desenvolvimento</h3>
+            <p>Transformo a estrutura em um layout moderno, responsivo e rápido, com foco em leitura, identidade visual e boa experiência de navegação.</p>
+            <div class="timeline-tags">
+              <span>UI</span><span>responsivo</span><span>performance</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-step">4</div>
+          <div>
+            <h3>Revisão e entrega</h3>
+            <p>Faço os ajustes finais, verifico detalhes e entrego a página pronta para publicação. Sem desaparecer no meio do projeto, que já seria pedir o mínimo de civilização.</p>
+            <div class="timeline-tags">
+              <span>ajustes</span><span>entrega</span><span>publicação</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section anchor-offset" id="faq">
+      <div class="section-label">Perguntas frequentes</div>
+      <h2 class="section-title">FAQ sobre criação de sites</h2>
+      <p class="section-intro">
+        Perguntas que aparecem sempre. O planeta muda, as tecnologias mudam, mas a humanidade continua perguntando as mesmas três coisas antes de contratar qualquer serviço digital.
+      </p>
+
+      <div class="faq">
+        <details open>
+          <summary>Quanto custa um site profissional?</summary>
+          <p>Depende do tipo de projeto, do número de páginas, da complexidade do conteúdo e das funcionalidades necessárias. Landing pages costumam ter um escopo mais simples. Sites institucionais e estruturas com várias páginas exigem mais planejamento e desenvolvimento.</p>
+        </details>
+
+        <details>
+          <summary>Quanto tempo demora para ficar pronto?</summary>
+          <p>O prazo varia conforme o escopo e a rapidez com que as informações são aprovadas. Projetos mais diretos podem ser entregues relativamente rápido. Estruturas maiores, com mais páginas e ajustes, naturalmente levam mais tempo.</p>
+        </details>
+
+        <details>
+          <summary>O site já vem preparado para SEO?</summary>
+          <p>Sim. A estrutura pode ser construída com foco em SEO on-page, incluindo headings corretos, organização de conteúdo, textos claros, meta tags e base técnica adequada. Isso não substitui estratégia contínua, mas impede que o site nasça sabotado.</p>
+        </details>
+
+        <details>
+          <summary>Vocês fazem versão mobile?</summary>
+          <p>Sim. O layout é desenvolvido para funcionar bem em celular, tablet e desktop. Hoje fazer site que só presta em notebook seria quase uma ofensa pública.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section anchor-offset" id="contato">
+      <div class="cta-box">
+        <div>
+          <div class="section-label">Contato</div>
+          <h2 class="section-title" style="margin-bottom: 0;">Vamos criar seu site</h2>
+          <p>
+            Se você precisa de uma landing page, site institucional ou estrutura comercial para apresentar seus serviços com clareza, me chama. Eu organizo a ideia, transformo em página e entrego uma base profissional que dá para mostrar sem vergonha e crescer depois.
+          </p>
+          <div class="cta-row" style="margin-bottom: 0;">
+            <a class="btn-primary" href="https://wa.me/5521997982467" target="_blank" rel="noopener noreferrer">Falar no WhatsApp →</a>
+            <a class="btn-secondary" href="/">Ver portfólio</a>
+          </div>
+        </div>
+
+        <aside class="price-card">
+          <span class="small">projetos sob medida</span>
+          <strong>Landing, institucional e páginas de serviço</strong>
+          <p>
+            O valor depende do escopo, do volume de conteúdo e das integrações. Me envia a ideia do projeto e eu te digo o formato mais eficiente para o que você precisa.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Ksenia. Criação de sites profissionais, bots e automação.</span>
+      <span>Feito para carregar rápido, explicar direito e evitar páginas inúteis.</span>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bots para WhatsApp e Telegram para negócios no Brasil. Automação de atendimento, vendas e suporte com integração a sistemas e APIs.">
+  <link rel="canonical" href="https://ksenia-card.vercel.app/bots">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bots para WhatsApp e Telegram | Ksenia">
+  <meta property="og:description" content="Bots personalizados para atendimento, vendas e automação de negócios.">
+  <meta property="og:url" content="https://ksenia-card.vercel.app/bots">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bots para WhatsApp e Telegram | Ksenia">
+  <meta name="twitter:description" content="Automação de atendimento, vendas e suporte para empresas no Brasil.">
+  <title>Bots para WhatsApp e Telegram | Ksenia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=UoTSrH83b-dyRrFfcqV6lklilXTjwticYjDeNJsh_uIeklHcz1x0jNPI0hTwCgk1T-ftz1ciJITi2AulpiMJB-0TgTR7MVCZpD6NsuSwtoxtvOm_WaKJoJM3i8JjUqQ85Y-mpG9uf_2S2ucDkcqjL8mDhvoJ4_TZp702qw93eir4BBWLvh7yqkW28LDLZkozfucQK60CVMkJOK7O_bx2HvL3YNLhkHw1bTQftQFofSVAUBvJB4MtJEHSEMroU8Xg_SjgkerlG4x--egwAaJlTA" charset="UTF-8"></script><style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --lime: #c8ff00;
+      --pink: #ff3ebe;
+      --cyan: #00e5ff;
+      --purple: #7b2fff;
+      --text: #f0f0f0;
+      --muted: #888;
+      --border: rgba(255,255,255,0.07);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 8vw;
+      background: rgba(10,10,15,0.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo span { color: var(--lime); }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-family: 'DM Mono', monospace;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--lime); }
+    .hero {
+      padding: 120px 8vw 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-shape {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.16;
+      pointer-events: none;
+    }
+    .shape1 { width: 420px; height: 420px; background: var(--purple); top: -80px; right: -120px; }
+    .shape2 { width: 260px; height: 260px; background: var(--cyan); bottom: 0; left: 10%; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,255,0,0.1);
+      border: 1px solid rgba(200,255,0,0.3);
+      color: var(--lime);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: clamp(42px, 6vw, 84px);
+      line-height: 0.95;
+      margin-bottom: 24px;
+      max-width: 900px;
+    }
+    .hero p {
+      max-width: 760px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 14px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: var(--lime);
+      color: #000;
+    }
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .section { padding: 90px 8vw; }
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--lime);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(34px, 5vw, 60px);
+      line-height: 1;
+      margin-bottom: 26px;
+    }
+    .lead {
+      max-width: 820px;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      line-height: 1.8;
+      margin-bottom: 42px;
+    }
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 24px;
+    }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .card p, .card li {
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+    .card ul {
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 18px;
+    }
+    .step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px 28px;
+      position: relative;
+      padding-left: 76px;
+    }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 24px;
+      top: 24px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(200,255,0,0.12);
+      color: var(--lime);
+      display: grid;
+      place-items: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 14px;
+      border: 1px solid rgba(200,255,0,0.25);
+    }
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+    .step p {
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+    .faq {
+      display: grid;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 26px;
+    }
+    .faq-item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .faq-item p {
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 14px;
+    }
+    .cta-box {
+      background: linear-gradient(135deg, rgba(123,47,255,0.18), rgba(0,229,255,0.10));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 36px;
+    }
+    .cta-box p {
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      line-height: 1.8;
+      max-width: 760px;
+      margin: 16px 0 26px;
+    }
+    footer {
+      padding: 28px 8vw 42px;
+      border-top: 1px solid var(--border);
+      font-family: 'DM Mono', monospace;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    @media (max-width: 900px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      nav { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .hero { padding-top: 90px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">K<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/">Início</a></li>
+      <li><a href="/sites">Sites</a></li>
+      <li><a href="/bots" class="active">Bots</a></li>
+      <li><a href="/automation">Automação</a></li>
+      <li><a href="/#portfolio">Portfólio</a></li>
+      <li><a href="/#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg-shape shape1"></div>
+    <div class="hero-bg-shape shape2"></div>
+    <div class="badge">Automação para atendimento e vendas</div>
+    <h1>Bots para WhatsApp e Telegram para negócios no Brasil</h1>
+    <p>
+      Desenvolvo bots personalizados para WhatsApp e Telegram que automatizam atendimento, vendas, qualificação de leads e suporte. Em vez de perder clientes por demora ou mensagens esquecidas, sua empresa passa a responder com velocidade, consistência e lógica de negócio.
+    </p>
+    <p>
+      Cada bot é pensado para o fluxo real da empresa: perguntas frequentes, envio de preços, captação de leads, filtros de atendimento, integração com APIs, encaminhamento para equipe e automação comercial. Porque responder tudo na mão em 2026 já é quase um esporte de sofrimento corporativo.
+    </p>
+    <div class="cta-row">
+      <a class="btn-primary" href="/#contato">Falar sobre meu projeto →</a>
+      <a class="btn-secondary" href="/#portfolio">Ver exemplos</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">O que um bot pode fazer</div>
+    <h2 class="section-title">Automação prática para empresas que precisam vender e atender melhor</h2>
+    <p class="lead">
+      Um bot bem construído não é só um robozinho simpático mandando mensagem automática. Ele organiza o fluxo de contato, reduz gargalos, qualifica a conversa e entrega respostas úteis no momento em que o cliente ainda está disposto a comprar.
+    </p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Atendimento automático</h3>
+        <p>Respostas iniciais, perguntas frequentes, horários, preços, direcionamento por assunto e encaminhamento para o setor certo sem depender de alguém grudado no celular o dia inteiro.</p>
+      </div>
+      <div class="card">
+        <h3>Qualificação de leads</h3>
+        <p>O bot pode entender o interesse do cliente, coletar dados, separar oportunidades reais e enviar contatos mais organizados para vendas ou suporte.</p>
+      </div>
+      <div class="card">
+        <h3>Integrações e automações</h3>
+        <p>Integração com planilhas, CRM, APIs, formulários, banco de dados, sistemas internos e fluxos personalizados para tornar o processo realmente útil.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Vantagens</div>
+    <h2 class="section-title">Por que empresas usam bots</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Mais velocidade</h3>
+        <ul>
+          <li>Resposta imediata ao primeiro contato</li>
+          <li>Disponibilidade 24 horas</li>
+          <li>Redução de fila e demora no atendimento</li>
+          <li>Padronização nas respostas</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Mais resultado</h3>
+        <ul>
+          <li>Menos leads perdidos</li>
+          <li>Melhor organização comercial</li>
+          <li>Menos tarefas repetitivas</li>
+          <li>Escala sem caos operacional</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Como funciona</div>
+    <h2 class="section-title">Processo de desenvolvimento</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Entendimento do fluxo</h3>
+        <p>Analiso como o atendimento funciona hoje, quais mensagens se repetem, onde os clientes travam e quais tarefas merecem ser automatizadas.</p>
+      </div>
+      <div class="step">
+        <h3>Arquitetura do bot</h3>
+        <p>Desenho o fluxo de conversa, regras, menus, respostas, ações e integrações de acordo com a necessidade real do negócio.</p>
+      </div>
+      <div class="step">
+        <h3>Desenvolvimento e testes</h3>
+        <p>Construo o bot, conecto as integrações necessárias e faço testes para evitar comportamentos absurdos, porque usuários já produzem caos suficiente sozinhos.</p>
+      </div>
+      <div class="step">
+        <h3>Ajustes e entrega</h3>
+        <p>Refino o fluxo, melhoro mensagens, ajusto gatilhos e deixo o bot pronto para uso com foco em clareza, eficiência e conversão.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Casos de uso</div>
+    <h2 class="section-title">Tipos de bots que posso desenvolver</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>WhatsApp para negócios</h3>
+        <p>Bots para atendimento, orçamento, triagem, agendamento, vendas, recuperação de leads, envio de informações e comunicação comercial.</p>
+      </div>
+      <div class="card">
+        <h3>Telegram e automações especiais</h3>
+        <p>Bots com comandos, notificações, painéis internos, integrações com sistemas, alertas automáticos e fluxos personalizados para operação.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Perguntas frequentes</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Quanto custa um bot para WhatsApp?</h3>
+        <p>O valor depende do fluxo, da complexidade, das integrações e do objetivo do projeto. Um bot simples é diferente de uma automação comercial conectada a vários sistemas.</p>
+      </div>
+      <div class="faq-item">
+        <h3>O bot pode integrar com API e sistema interno?</h3>
+        <p>Sim. Posso desenvolver integrações conforme a estrutura do projeto, conectando o bot a bancos de dados, CRMs, APIs externas ou fluxos específicos da empresa.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Posso usar para vendas e suporte ao mesmo tempo?</h3>
+        <p>Sim. O fluxo pode separar atendimento comercial, suporte, dúvidas frequentes e encaminhamento para pessoas da equipe quando necessário.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cta-box">
+      <div class="section-label">Vamos construir</div>
+      <h2 class="section-title">Quer automatizar seu atendimento com um bot sob medida?</h2>
+      <p>
+        Se você precisa de um bot para WhatsApp ou Telegram que realmente ajude seu negócio, posso desenvolver uma solução personalizada para atendimento, vendas e automação. Nada de template genérico fingindo que serve para tudo.
+      </p>
+      <div class="cta-row">
+        <a class="btn-primary" href="/#contato">Solicitar orçamento</a>
+        <a class="btn-secondary" href="/sites">Ver página de sites</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Ksenia · Bots para WhatsApp e Telegram · Desenvolvimento sob medida para negócios no Brasil
+  </footer>
+</body>
+</html>
